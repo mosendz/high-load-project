@@ -1,0 +1,18 @@
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  job_name: "matchlive testing"
+  job_dsc: "Linear 1m 1000 Const 3m"
+  token_file: "token.txt"
+phantom:
+  address: 192.168.0.142:8080
+  ssl: false
+  load_profile:
+    load_type: rps
+    schedule: line(1, 1000, 1m) const(1000, 3m)
+console:
+  enabled: true  
+telegraf:
+  enabled: false
+  package: yandextank.plugins.Telegraf
+  config: "config.xml"
